@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col text-left">
-                <h2>Editar capítulo</h2>
+                <h2>Guardar capítulo</h2>
             </div>
         </div>
         <div class="row">
@@ -29,7 +29,7 @@
                             </div>   
                             <div class="rows">
                                 <div class="col text-left">
-                                    <b-button type="submit" variant="primary">Editar</b-button>
+                                    <b-button type="submit" variant="success">Guardar</b-button>
                                     <b-button type="submit" variant="warning" :href="'/historias'" replace>Cancelar</b-button>
                                 </div>    
                             </div>    
@@ -48,42 +48,32 @@ import swal from 'sweetalert';
 
 export default {
     data(){
-        return{
-            historiaId: this.$route.params.historiaId,
+        return{            
             form:{
-                event: '<3',
-                description: '<3'
+                event: '',
+                description: ''
             }
         }
     },
     methods:{
         onSubmit(evt){ 
             evt.preventDefault();
-            const path = `${process.env.BASE_URI}historias/${this.historiaId}/`;
-            axios.put(path, this.form).then((res)=>{
+            console.log(process.env.BASE_URI)
+            const path = `${process.env.BASE_URI}historias/`;
+            axios.post(path, this.form).then((res)=>{
                 this.form.event = res.data.event;
                 this.form.description = res.data.description;                
-                swal("Registro actualizado.","","success").then(()=>{
+                swal("Registro creado.","","success").then(()=>{                    
                     location.href = '/historias';
                 })
-                
             }).catch((err)=>{
-                swal("No se pudo actualizar el registro.","","error")
+                swal("No se pudo crear el regist.ro.","","error")
                 console.error(err);
-            });
-        },
-        getBook(){
-            const path = `${process.env.BASE_URI}historias/${this.historiaId}/`;
-            axios.get(path).then((res)=>{
-                this.form.event = res.data.event;
-                this.form.description = res.data.description;
-            }).catch((err)=>{
-                console.log(err);
             });
         }
     },
     created(){
-         this.getBook();
+        
     }
 }
 </script>

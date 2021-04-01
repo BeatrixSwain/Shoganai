@@ -13,5 +13,9 @@ Proyecto de Django + Vue CLI
 - Librerías: axios(para las peticiones al backend) y Sweet Alert.
 - Paquete python: django-cors-headers
 - En settings de la aplicación madre, añadirlo en installed_apps y un nuevo middleware. Además, añadir el CORS_ORIGIN_ALLOW_ALL y el CORS_ORIGIN_WHITELIST
+- El nombre de la página viene desde variables de entorno.
+
+### Preparado para arrancarlo sólo desde el servidor de DJANGO
+
 
 
