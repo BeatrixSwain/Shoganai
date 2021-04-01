@@ -1,4 +1,17 @@
 # Shoganai
 ## 31.03.2021
-Proyecto de Django + Vue.
+Proyecto de Django + Vue CLI
+
+ ### DJAGO: 
+- Aplicación Shoganai con modelo historia, API generada y funcionado en la ruta indicada en shoganai.urls.py
+- Ejemplo sencillo.
+
+### VUE CLI:
+- Inicio de proyecto.
+- Componentes: Historias (Edit/list)
+- Edición de APP.vue -> hay navbar y footer
+- Librerías: axios(para las peticiones al backend) y Sweet Alert.
+- Paquete python: django-cors-headers
+- En settings de la aplicación madre, añadirlo en installed_apps y un nuevo middleware. Además, añadir el CORS_ORIGIN_ALLOW_ALL y el CORS_ORIGIN_WHITELIST
+
 

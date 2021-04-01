@@ -29,6 +29,12 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+CORS_ORIGIN_ALLOW_ALL = True
+
+#Dominios que pueden hacer peticiones al servidor
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8080'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'historia',#Añadimos la aplicacion historia
     'rest_framework',#Se añade djangorestframework
+    'corsheaders',#se registra el paquete instalado de django-cors-headers
 ]
 
 MIDDLEWARE = [
@@ -49,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'shoganai.urls'
