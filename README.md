@@ -17,5 +17,7 @@ Proyecto de Django + Vue CLI
 
 ### Preparado para arrancarlo sólo desde el servidor de DJANGO
 
+## Screenshots
+![alt text](https://gyazo.com/9645f8b8597dbd42ec424e9a3406dd8e)
 
 
